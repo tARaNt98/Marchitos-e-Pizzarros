@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marchitos vs Pizarros</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="#">
+          <strong>CALCETTINO</strong>
+        </a>
+        <ul class="header__menu">
+          <li><a href="#">Le Squadre</a></li>
+          <li><a href="#">Le Statistiche</a></li>
+          <li><a href="#">Le Partite</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+        <div class="header__quick">
+          <a href="#">Contatti</a>
+          <div class="icon-hamburger">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+
+    <div class="side left">
+      <img src="images/marchitos logo (2).png" alt="Marchitos Logo" class="logo">
+    </div>
+    <div class="side right">
+      <img src="images/Progetto senza titolo (4).png" alt="Pizarros Logo" class="logo">
+    </div>
+  </div>
+</body>
+
+<script>
+    let item = document.querySelector('.icon-hamburger');
+    item.addEventListener("click", function() {
+          document.body.classList.toggle('menu-open');
+    });
+  </script>
+</html>
+
