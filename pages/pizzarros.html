@@ -1,44 +1,139 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marchitos vs Pizarros</title>
-<link rel="stylesheet" href="../styles/stylePagine.css">
-</head>
-<body class="body-pizzarros">
-  <div class="container">
+  <title>Matchday 1 - Marchitos vs Pizzarros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
 
-    <header class="header">
-      <div class="header__content">
-        <a class="header__logo" href="../index.html">
-          <strong>CALCETTINO</strong>
-        </a>
-        <ul class="header__menu">
-          <li><a href="#">Le Statistiche</a></li>
-          <li><a href="#">Le Partite</a></li>
-          <li><a href="#">News</a></li>
-        </ul>
-        <div class="header__quick">
-          <a href="#">Contatti</a>
-          <div class="icon-hamburger">
-            <span></span>
-            <span></span>
-          </div>
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .matchday-title {
+      background-color: #ffa500;
+      color: #000;
+      padding: 4px 12px;
+      display: inline-block;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .table-header, .match-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 4fr 1fr;
+      padding: 12px 16px;
+      align-items: center;
+    }
+
+    .table-header {
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #aaa;
+      border-bottom: 1px solid #333;
+    }
+
+    .match-row {
+      background-color: #222;
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+
+    .match-teams {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .team {
+      display: flex;
+      align-items: center;
+    }
+
+    .team-logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+
+    .score {
+      font-weight: bold;
+      margin: 0 6px;
+    }
+
+    .status {
+      text-align: right;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    /* Optional hover effect */
+    .match-row:hover {
+      background-color: #2a2a2a;
+    }
+
+    @media (max-width: 768px) {
+      .table-header, .match-row {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+      }
+
+      .match-teams {
+        grid-column: span 3;
+        justify-content: center;
+      }
+
+      .status {
+        text-align: center;
+        grid-column: span 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="matchday-title">Matchday 1</div>
+
+    <div class="table-header">
+      <div>Date</div>
+      <div>Hour</div>
+      <div>Match</div>
+      <div>Status</div>
+    </div>
+
+    <div class="match-row">
+      <div>02/3/25</div>
+      <div>5:00 PM ITA</div>
+      <div class="match-teams">
+        <div class="team">
+          <img src="blacklotus.png" alt="Black Lotus" class="team-logo">
+          <span>Black Lotus FC</span>
+        </div>
+        <div>
+          <span class="score">4</span>vs<span class="score">5</span>
+        </div>
+        <div class="team">
+          <span>Punchers FC</span>
+          <img src="punchers.png" alt="Punchers" class="team-logo">
         </div>
       </div>
-    </header>
-    
+      <div class="status">Ended</div>
+    </div>
 
-
+    <!-- Altre righe di match identiche -->
     
+  </div>
 </body>
-
-<script>
-    let item = document.querySelector('.icon-hamburger');
-    item.addEventListener("click", function() {
-          document.body.classList.toggle('menu-open');
-    });
-  </script>
 </html>
-
