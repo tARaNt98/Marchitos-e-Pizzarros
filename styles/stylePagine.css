@@ -1,58 +1,347 @@
 body, html {
-    height: 100vh;
+  height: 100vh;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ! Reset */
-body, html{ font-family: 'Inter', Arial, Helvetica, sans-serif; font-size: 16px; box-sizing: border-box;margin: 0;padding: 0;}*,*:before,*:after{ box-sizing: 
-border-box; }h1,h2,h3,h4,h5,h6, p, ol, ul{margin: 0 0 1rem 0;padding: 0;}ol,ul{list-style-type: none;}img{height: auto;}h1{font-size: 4rem;} h2{font-size: 3rem;} 
-h3{font-size: 2rem;} h4{font-size: 1rem;} h5{font-size: 0.8rem;} h6{font-size: 0.6rem;}a{text-decoration:none}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-/* ! Title System */
-h1, .text-1 {font-size: 3.5rem;margin-bottom:0.5rem}
-h2, .text-2 {font-size: 2.4rem;margin-bottom:1rem}
-h3, .text-3  {font-size: 1.8rem;margin-bottom:1rem}
-h4, p, .text-4 {font-size: 1rem;margin-bottom:1rem; line-height: 1.5;}
-a{color: #e9d9be}
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
 
+ol, ul {
+  list-style-type: none;
+}
 
-/* Menu */
-:root { --menu-bg: #1d1d1f; --menu-color: #fff; }
+img {
+  height: auto;
+}
 
-.header{ background-color: var(--menu-bg); position: fixed; top:0;  left:0; z-index: 9999; width: 100%; padding: 10px 15px; }
-.header__content{max-width: 1200px;width: 100%;margin: 0 auto; display: flex;justify-content: space-between;}
+a {
+  text-decoration: none;
+  color: #e9d9be;
+}
+
+/* Title system */
+h1, .text-1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+h2, .text-2 { font-size: 2.4rem; margin-bottom: 1rem; }
+h3, .text-3 { font-size: 1.8rem; margin-bottom: 1rem; }
+h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
+
+:root {
+  --menu-bg: #1d1d1f;
+  --menu-color: #fff;
+}
+
+.header {
+  background-color: var(--menu-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.header__content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
 
 .header__logo,
-.header__quick{display: flex; align-items: center;color:var(--menu-color)}
+.header__quick {
+  display: flex;
+  align-items: center;
+  color: var(--menu-color);
+}
 
-.header__menu{padding: 0;margin: 0;}
-.header__menu li{display: inline-block;}
-.header__menu li a{color:var(--menu-color); opacity: 0.8;display: block;padding: 16px;font-size: 15px;}
+.header__menu {
+  padding: 0;
+  margin: 0;
+}
 
+.header__menu li {
+  display: inline-block;
+}
+
+.header__menu li a {
+  color: var(--menu-color);
+  opacity: 0.8;
+  display: block;
+  padding: 16px;
+  font-size: 15px;
+}
 
 @media (max-width: 768px) {
-  .header__menu{   
-    position: absolute; top:60px; left:0; background-color: var(--menu-bg); width: 100%; height: 100vh;
-    height: 0vh; overflow: hidden;transition: all 1s cubic-bezier(.215, .61, .355, 1);
+  .header__menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--menu-bg);
+    width: 100%;
+    height: 0vh;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
   }
 
-  .header__menu li{width: 100%;border-bottom: 1px solid #444}
-  .menu-open .header__menu{height: 100vh;padding: 3%;}
+  .header__menu li {
+    width: 100%;
+    border-bottom: 1px solid #444;
+  }
 
-  .icon-hamburger{height: 50px;width: 40px;margin-left: 20px;padding-top: 5px;}
-  .icon-hamburger span{height: 2px; width: 30px;background: var(--menu-color);position: relative;display: block;margin-top: 11px;transition: all 0.2s cubic-bezier(.215, .61, .355, 1);}
+  .menu-open .header__menu {
+    height: 100vh;
+    padding: 3%;
+  }
 
-  .menu-open .icon-hamburger span:nth-child(1){transform: rotate(45deg) translateY(9px);}
-  .menu-open .icon-hamburger span:nth-child(2){transform: rotate(-45deg) translateY(-9px);}
+  .icon-hamburger {
+    height: 50px;
+    width: 40px;
+    margin-left: 20px;
+    padding-top: 5px;
+  }
 
-  .header__quick{display: flex; justify-content: flex-end; width: 50%;}
+  .icon-hamburger span {
+    height: 2px;
+    width: 30px;
+    background: var(--menu-color);
+    position: relative;
+    display: block;
+    margin-top: 11px;
+    transition: all 0.2s cubic-bezier(.215, .61, .355, 1);
+  }
 
+  .menu-open .icon-hamburger span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+  }
+
+  .menu-open .icon-hamburger span:nth-child(2) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+
+  .header__quick {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+}
+
+.body-marchitos {
+  background-color: #e9d9be;
+}
+
+.body-pizzarros {
+  background-color: #05050e;
+}
+
+/* Match section */
+.container {
+  max-width: 1000px;
+  margin: 100px auto 40px auto;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.matchday-title {
+  background-color: #e9d9be;
+  color: #000;
+  padding: 4px 12px;
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.table-header,
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr 1fr;
+  padding: 12px 16px;
+  align-items: center;
+}
+
+.table-header {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #aaa;
+  border-bottom: 1px solid #333;
+}
+
+.match-row {
+  background-color: #222;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.match-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.score {
+  font-weight: bold;
+  margin: 0 6px;
+}
+
+.status {
+  text-align: center;
+  font-weight: bold;
+  color: #3fd16c;
 }
 
 
-.body-marchitos{
-    background-color: #e9d9be;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f2f2f2;
 }
 
-.body-pizzarros{
-    background-color: #05050e;
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.table-header,
+.match-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.table-header {
+  border-bottom: 2px solid #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #cccccc;
+  background-color: #1a1a1a;
+}
+
+.match-row {
+  background-color: #222;
+  border-radius: 8px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.match-row:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.match-row > div,
+.table-header > div {
+  flex: 1;
+  text-align: center;
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.team span {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.score {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.status {
+  font-weight: bold;
+  color: #3fd16c;
+  font-size: 14px;
+}
+
+
+/* ! Helpers  */
+.mt-0{margin-top: 0 }
+.mt-1{margin-top: 10px}
+.mt-2{margin-top: 20px}
+.mt-3{margin-top: 40px}
+.mt-4{margin-top: 100px }
+
+.mb-0{margin-bottom: 0}
+.mb-1{margin-bottom: 10px}
+.mb-2{margin-bottom: 20px}
+.mb-3{margin-bottom: 40px}
+.mb-4{margin-bottom: 100px}
+
+.p-0{padding: 0}
+.p-1{padding: 10px}
+.p-2{padding: 20px}
+.p-3{padding: 40px}
+.p-4{padding: 100px}
+
+.pt-1{padding-top: 10px;}
+.pt-3{padding-top: 20px;}
+.pt-3{padding-top: 40px;}
+.pt-4{padding-top: 15vh;}
+
+.pb-1{padding-bottom: 10px;}
+.pb-2{padding-bottom: 20px;}
+.pb-3{padding-bottom: 40px;}
+.pb-4{padding-bottom: 15vh;}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.img-res { width: 100%; height: auto; margin-bottom: 20px;vertical-align: middle;}
