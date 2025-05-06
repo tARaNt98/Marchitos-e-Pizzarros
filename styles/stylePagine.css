@@ -82,6 +82,8 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   font-size: 15px;
 }
 
+.header__menu li a:hover{border-bottom: 1px solid white;}
+
 @media (max-width: 768px) {
   .header__menu {
     position: absolute;
