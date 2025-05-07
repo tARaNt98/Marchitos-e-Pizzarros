@@ -22,11 +22,17 @@ ol, ul {
 
 img {
   height: auto;
+  max-width: 100%; /* Added for better image responsiveness */
 }
 
 a {
   text-decoration: none;
   color: #e9d9be;
+}
+
+
+.spacer{
+  height: 100px;
 }
 
 /* Title system */
@@ -56,6 +62,7 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Added to vertically align items */
 }
 
 .header__logo,
@@ -86,56 +93,72 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
 
 @media (max-width: 768px) {
   .header__menu {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: var(--menu-bg);
-    width: 100%;
-    height: 0vh;
-    overflow: hidden;
-    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: var(--menu-bg);
+      width: 100%;
+      height: 0vh;
+      overflow: hidden;
+      transition: all 1s cubic-bezier(.215, .61, .355, 1);
   }
 
   .header__menu li {
-    width: 100%;
-    border-bottom: 1px solid #444;
+      width: 100%;
+      border-bottom: 1px solid #444;
   }
 
   .menu-open .header__menu {
-    height: 100vh;
-    padding: 3%;
+      height: calc(100vh - 60px); /* Adjusted height */
+      padding: 3%;
+      overflow-y: auto; /* Added scroll for long menus */
   }
 
   .icon-hamburger {
-    height: 50px;
-    width: 40px;
-    margin-left: 20px;
-    padding-top: 5px;
+      height: 50px;
+      width: 40px;
+      margin-left: 20px;
+      padding-top: 5px;
+      display: flex; /* Added flex for centering spans */
+      flex-direction: column; /* Stack spans vertically */
+      justify-content: center; /* Center spans vertically */
+      align-items: center; /* Center spans horizontally */
   }
 
   .icon-hamburger span {
-    height: 2px;
-    width: 30px;
-    background: var(--menu-color);
-    position: relative;
-    display: block;
-    margin-top: 11px;
-    transition: all 0.2s cubic-bezier(.215, .61, .355, 1);
+      height: 2px;
+      width: 30px;
+      background: var(--menu-color);
+      position: relative;
+      display: block;
+      margin-top: 11px;
+      transition: all 0.2s cubic-bezier(.215, .61, .355, 1);
   }
 
   .menu-open .icon-hamburger span:nth-child(1) {
-    transform: rotate(45deg) translateY(9px);
+      transform: rotate(45deg) translateY(9px);
   }
 
   .menu-open .icon-hamburger span:nth-child(2) {
-    transform: rotate(-45deg) translateY(-9px);
+      transform: rotate(-45deg) translateY(-9px);
+  }
+  /* Added styles for the third span if it exists */
+  .icon-hamburger span:nth-child(3) {
+      display: none; /* Hide the third span if it exists for the effect */
   }
 
   .header__quick {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      width: 50%;
   }
+   /* Hide the regular menu items on small screens */
+   .header__menu li {
+      display: block;
+   }
+    .header__menu li a {
+      padding: 12px; /* Adjust padding for mobile links */
+    }
 }
 
 .body-marchitos {
@@ -153,6 +176,8 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   background: #1a1a1a;
   border-radius: 12px;
   padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Combined box-shadow */
+  overflow-x: auto; /* Added horizontal scroll for the container if content overflows */
 }
 
 .matchday-title {
@@ -168,9 +193,12 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
 .table-header,
 .match-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 4fr 1fr;
+  grid-template-columns: 1fr 1fr 4fr 1fr; /* Reverted to original for desktop */
   padding: 12px 16px;
   align-items: center;
+  gap: 10px; /* Keep gap for spacing */
+  min-width: 600px; /* Ensure a minimum width for the table content to prevent excessive stacking on slightly larger mobile screens */
+  color: white;
 }
 
 .table-header {
@@ -178,88 +206,23 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   font-size: 12px;
   color: #aaa;
   border-bottom: 1px solid #333;
+  background-color: #1a1a1a; /* Added background for header */
+  border-top-left-radius: 8px; /* Rounded corners for header */
+  border-top-right-radius: 8px;
 }
+
+/* Specific alignment for header cells */
+.table-header > div:nth-child(1) { text-align: left; } /* Data */
+.table-header > div:nth-child(2) { text-align: center; } /* Ora */
+.table-header > div:nth-child(3) { text-align: center; } /* Match */
+.table-header > div:nth-child(4) { text-align: center; } /* Stato */
+
 
 .match-row {
   background-color: #222;
   border-radius: 8px;
   margin: 8px 0;
-}
-
-.match-teams {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.team {
-  display: flex;
-  align-items: center;
-}
-
-.team-logo {
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
-}
-
-.score {
-  font-weight: bold;
-  margin: 0 6px;
-}
-
-.status {
-  text-align: center;
-  font-weight: bold;
-  color: #3fd16c;
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #f2f2f2;
-}
-
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.table-header,
-.match-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-}
-
-.table-header {
-  border-bottom: 2px solid #333;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
-  color: #cccccc;
-  background-color: #1a1a1a;
-}
-
-.match-row {
-  background-color: #222;
-  border-radius: 8px;
-  margin: 10px 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Combined transition */
 }
 
 .match-row:hover {
@@ -269,42 +232,49 @@ h1 {
   cursor: pointer;
 }
 
-.match-row > div,
-.table-header > div {
-  flex: 1;
-  text-align: center;
-}
+/* Specific alignment for row cells */
+.match-row > div:nth-child(1) { text-align: left; } /* Data */
+.match-row > div:nth-child(2) { text-align: center; } /* Ora */
+.match-row > div:nth-child(3) { text-align: center; } /* Match */
+.match-row > div:nth-child(4) { text-align: center; } /* Stato */
+
 
 .match-teams {
   display: flex;
+  justify-content: center; /* Center the match teams content */
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px; /* Increased gap */
+  flex-wrap: wrap; /* Allow items within match-teams to wrap if necessary */
 }
 
 .team {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px; /* Adjusted gap */
 }
 
 .team-logo {
-  width: 32px;
-  height: 32px;
+  width: 28px; /* Adjusted logo size */
+  height: 28px; /* Adjusted logo size */
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .team span {
   color: #ffffff;
   font-weight: 500;
+  white-space: nowrap; /* Prevent team names from wrapping on desktop */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
 }
 
 .score {
   font-weight: bold;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 16px; /* Adjusted score font size */
+  flex-shrink: 0; /* Prevent score from shrinking */
 }
 
 .status {
@@ -313,8 +283,88 @@ h1 {
   font-size: 14px;
 }
 
+.status-da-giocare {
+  font-weight: bold;
+  color: #f0d90e;
+  font-size: 14px;
+}
 
-/* ! Helpers  */
+/* Responsive adjustments for the table on small screens */
+@media (max-width: 600px) {
+   .table-header,
+  .match-row {
+      grid-template-columns: 1fr 1fr; /* Two columns layout */
+      grid-template-areas:
+          "data ora"
+          "match match"
+          "status status"; /* Define areas for mobile layout */
+      gap: 8px; /* Adjust gap for smaller screens */
+      padding: 10px;
+      min-width: auto; /* Remove minimum width on very small screens */
+  }
+
+  /* Reset specific alignment for header and row cells within this media query */
+  .table-header > div, .match-row > div {
+      text-align: left; /* Default to left alignment on small screens */
+      padding: 2px 0; /* Add slight vertical padding */
+  }
+
+  /* Assign grid areas to the correct child elements */
+  .table-header > div:nth-child(1), .match-row > div:nth-child(1) { grid-area: data; }
+  .table-header > div:nth-child(2), .match-row > div:nth-child(2) {
+      grid-area: ora;
+      text-align: right; /* Keep time aligned right */
+  }
+  .table-header > div:nth-child(3), .match-row > div:nth-child(3) { grid-area: match; }
+  .table-header > div:nth-child(4), .match-row > div:nth-child(4) { grid-area: status; }
+
+
+  .match-teams {
+      justify-content: flex-start; /* Align match teams content to the left */
+      gap: 8px; /* Adjust gap within match-teams */
+      flex-wrap: wrap; /* Allow team names and scores to wrap if needed */
+      width: 100%; /* Ensure match-teams takes available width */
+  }
+
+  .team {
+      flex-direction: row; /* Keep logo and name side-by-side */
+      align-items: center;
+       /* Allow team block to wrap if needed */
+       flex-basis: content; /* Allow flex items to size based on content */
+  }
+
+  .team span {
+       white-space: normal; /* Allow team names to wrap on mobile */
+       font-size: 14px; /* Reduce font size for team names */
+       overflow: visible; /* Ensure text is visible when wrapping */
+       text-overflow: clip; /* Remove ellipsis when wrapping */
+  }
+
+  .team-logo {
+      width: 20px; /* Further reduce logo size */
+      height: 20px;
+  }
+
+  .score {
+      font-size: 12px; /* Further reduce score font size */
+       white-space: nowrap; /* Keep score together */
+       margin: 0 4px; /* Adjust margin around the score */
+  }
+   .status,
+  .status-da-giocare {
+      font-size: 12px; /* Reduce status font size */
+      text-align: left; /* Ensure status is left-aligned */
+  }
+   /* Adjust padding for the container on small screens */
+  .container {
+      padding: 10px;
+      margin: 25px;
+
+  }
+}
+
+
+/* ! Helpers  */
 .mt-0{margin-top: 0 }
 .mt-1{margin-top: 10px}
 .mt-2{margin-top: 20px}
