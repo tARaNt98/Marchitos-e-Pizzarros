@@ -319,6 +319,8 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   .table-header > div:nth-child(4), .match-row > div:nth-child(4) { grid-area: status; }
 
 
+
+
   .match-teams {
       justify-content: flex-start; /* Align match teams content to the left */
       gap: 8px; /* Adjust gap within match-teams */
