@@ -51,6 +51,29 @@ a{color: #e9d9be}
     transform: scale(1.2);
 }
 
+
+
+
+
+
+
+
+
+/* Footer */
+.footer{
+    background: var(--menu-bg);
+    height: 10vh;
+    color: var(--menu-color);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  
+  .footer h3{
+    margin-right: 20px;
+  }
+  
+  
 @media (max-width: 768px) {
     .container {
       flex-direction: column;

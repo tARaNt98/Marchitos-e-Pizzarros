@@ -38,7 +38,7 @@ a {
 /* Title system */
 h1, .text-1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
 h2, .text-2 { font-size: 2.4rem; margin-bottom: 1rem; }
-h3, .text-3 { font-size: 1.8rem; margin-bottom: 1rem; }
+h3, .text-3 { font-size: 1.5rem; margin-bottom: 1rem; }
 h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
 
 :root {
@@ -159,6 +159,7 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
     .header__menu li a {
       padding: 12px; /* Adjust padding for mobile links */
     }
+
 }
 
 .body-marchitos {
@@ -168,6 +169,25 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
 .body-pizzarros {
   background-color: #05050e;
 }
+
+
+
+
+
+/* Footer */
+.footer{
+  background: var(--menu-bg);
+  height: 10vh;
+  color: var(--menu-color);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.footer h3{
+  margin-right: 20px;
+}
+
 
 /* Match section */
 .container {
@@ -380,8 +400,8 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
 .team-title {
   font-size: 1.8em;
   margin-bottom: 20px;
-  color: #ff9800;
-  border-left: 6px solid #ff9800;
+  color: #e9d9be;
+  border-left: 6px solid #e9d9be;
   padding-left: 12px;
 }
 
