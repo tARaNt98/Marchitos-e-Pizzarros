@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marchitos' Home</title>
-<link rel="stylesheet" href="../styles/stylePagine.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marchitos FC</title>
+  <link rel="stylesheet" href="../styles/stylePagine.css" />
+  <link rel="stylesheet" href="../styles/styleMarchitos.css" />
 </head>
 <body class="body-marchitos">
-  
 
-    <header class="header">
-      <div class="header__content">
-        <a class="header__logo" href="../index.html">
-          <strong>GORETTI LEAGUE</strong>
-        </a>
-        <ul class="header__menu">
-          <li><a href="statistiche.html">Le Statistiche</a></li>
-          <li><a href="partite.html">Le Partite</a></li>
-          <li><a href="#">News</a></li>
-        </ul>
-        <div class="header__quick">
-          <a href="#">Contatti</a>
-          <div class="icon-hamburger">
-            <span></span>
-            <span></span>
-          </div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__content">
+      <a class="header__logo" href="../index.html"><strong>GORETTI LEAGUE</strong></a>
+      <ul class="header__menu">
+        <li><a href="statistiche.html">Le Statistiche</a></li>
+        <li><a href="partite.html">Le Partite</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+      <div class="header__quick">
+        <a href="#">Contatti</a>
+        <div class="icon-hamburger">
+          <span></span>
+          <span></span>
         </div>
       </div>
-    </header>
-    
+    </div>
+  </header>
 
+  <div class="spacer"></div>
 
-    <!-- FOOTER -->
+  <!-- HERO CIRCOLARE -->
+  <section class="circle-hero-wrapper">
+    <div class="circle-hero">
+      <!-- Sostituisci il percorso con la tua foto -->
+      <img src="../images/marchitos.jpg" alt="Marchitos FC" />
+    </div>
+    <div class="team-name">Marchitos FC</div>
+    <div class="team-desc">Orgoglio e passione dal 2024</div>
+  </section>
 
-<div class="footer mt-4">
-  <h3>&copy Goretti League - Ferrara</h3>
-</div>
+  <!-- BOTTONE CTA MODERNO -->
+  <div class="modern-cta">
+    <a href="statistiche.html" tabindex="-1">
+      <button class="cta-animated">
+        <span>Vai alle statistiche</span>
+      </button>
+    </a>
+  </div>
 
-<!-- FINE FOOTER -->
-
-
-    
-</body>
-
-<script>
+  <script>
     let item = document.querySelector('.icon-hamburger');
     item.addEventListener("click", function() {
-          document.body.classList.toggle('menu-open');
+      document.body.classList.toggle('menu-open');
     });
   </script>
+</body>
 </html>
-
