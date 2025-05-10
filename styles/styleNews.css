@@ -1,5 +1,5 @@
 body.body-marchitos {
-    background-color: #e9d9be;
+    background-color: #e3d5ca;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 20px;
@@ -47,7 +47,7 @@ body.body-marchitos {
     width: 100%;
     aspect-ratio: 3 / 4; /* rapporto verticale */
     object-fit: cover;
-    border-bottom: 2px solid #e9d9be;
+    border-bottom: 2px solid #e3d5ca;
     display: block;
   }
 
@@ -61,7 +61,7 @@ body.body-marchitos {
 
   .news-date {
     font-size: 0.9rem;
-    color: #f0d90e;
+    color: #bba696;
     font-weight: bold;
     margin-bottom: 12px;
     letter-spacing: 1px;
@@ -70,7 +70,7 @@ body.body-marchitos {
   .news-text {
     font-size: 1rem;
     line-height: 1.4;
-    color: #e9d9be;
+    color: #e3d5ca;
   }
 
   /* Responsive adjustments */
