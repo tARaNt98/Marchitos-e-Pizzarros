@@ -11,7 +11,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; /* Allinea gli elementi dall'alto */
-    background-color: #e9d9be; /* Colore di sfondo */
+    background-color: #e3d5ca; /* Colore di sfondo */
   }
 
   /* Header */
@@ -43,7 +43,7 @@ html, body {
     height: 500px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 0 12px #e9d9be, 0 8px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 0 0 12px #bba696, 0 8px 40px rgba(0,0,0,0.25);
     background: #1a1a1a;
     display: flex;
     align-items: center;
