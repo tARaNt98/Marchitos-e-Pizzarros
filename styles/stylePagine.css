@@ -1,3 +1,8 @@
+/* ===============================
+   RESET E BASE
+   =============================== */
+
+/* Reset di base e box-sizing */
 body, html {
   height: 100vh;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -11,6 +16,7 @@ body, html {
   box-sizing: inherit;
 }
 
+/* Reset margini e padding per tipici elementi */
 h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0 0 1rem 0;
   padding: 0;
@@ -22,7 +28,7 @@ ol, ul {
 
 img {
   height: auto;
-  max-width: 100%; /* Added for better image responsiveness */
+  max-width: 100%; /* Immagini responsive */
 }
 
 a {
@@ -30,21 +36,33 @@ a {
   color: #e9d9be;
 }
 
-
-.spacer{
-  height: 100px;
+/* Spaziatore verticale */
+.spacer {
+  height: 60px;
 }
 
-/* Title system */
+/* ===============================
+   TIPOGRAFIA
+   =============================== */
+
+/* Sistema titoli e testi */
 h1, .text-1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
 h2, .text-2 { font-size: 2.4rem; margin-bottom: 1rem; }
 h3, .text-3 { font-size: 1.5rem; margin-bottom: 1rem; }
 h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
 
+/* ===============================
+   VARIABILI CSS
+   =============================== */
+
 :root {
   --menu-bg: #1d1d1f;
   --menu-color: #fff;
 }
+
+/* ===============================
+   HEADER E MENU
+   =============================== */
 
 .header {
   background-color: var(--menu-bg);
@@ -62,7 +80,7 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Added to vertically align items */
+  align-items: center;
 }
 
 .header__logo,
@@ -89,78 +107,13 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   font-size: 15px;
 }
 
-.header__menu li a:hover{border-bottom: 1px solid white;}
-
-@media (max-width: 768px) {
-  .header__menu {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: var(--menu-bg);
-      width: 100%;
-      height: 0vh;
-      overflow: hidden;
-      transition: all 1s cubic-bezier(.215, .61, .355, 1);
-  }
-
-  .header__menu li {
-      width: 100%;
-      border-bottom: 1px solid #444;
-  }
-
-  .menu-open .header__menu {
-      height: calc(100vh - 60px); /* Adjusted height */
-      padding: 3%;
-      overflow-y: auto; /* Added scroll for long menus */
-  }
-
-  .icon-hamburger {
-      height: 50px;
-      width: 40px;
-      margin-left: 20px;
-      padding-top: 5px;
-      display: flex; /* Added flex for centering spans */
-      flex-direction: column; /* Stack spans vertically */
-      justify-content: center; /* Center spans vertically */
-      align-items: center; /* Center spans horizontally */
-  }
-
-  .icon-hamburger span {
-      height: 2px;
-      width: 30px;
-      background: var(--menu-color);
-      position: relative;
-      display: block;
-      margin-top: 11px;
-      transition: all 0.2s cubic-bezier(.215, .61, .355, 1);
-  }
-
-  .menu-open .icon-hamburger span:nth-child(1) {
-      transform: rotate(45deg) translateY(9px);
-  }
-
-  .menu-open .icon-hamburger span:nth-child(2) {
-      transform: rotate(-45deg) translateY(-9px);
-  }
-  /* Added styles for the third span if it exists */
-  .icon-hamburger span:nth-child(3) {
-      display: none; /* Hide the third span if it exists for the effect */
-  }
-
-  .header__quick {
-      display: flex;
-      justify-content: flex-end;
-      width: 50%;
-  }
-   /* Hide the regular menu items on small screens */
-   .header__menu li {
-      display: block;
-   }
-    .header__menu li a {
-      padding: 12px; /* Adjust padding for mobile links */
-    }
-
+.header__menu li a:hover {
+  border-bottom: 1px solid white;
 }
+
+/* ===============================
+   BODY VARIANTI
+   =============================== */
 
 .body-marchitos {
   background-color: #e9d9be;
@@ -170,12 +123,11 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   background-color: #05050e;
 }
 
+/* ===============================
+   FOOTER
+   =============================== */
 
-
-
-
-/* Footer */
-.footer{
+.footer {
   background: var(--menu-bg);
   height: 10vh;
   color: var(--menu-color);
@@ -184,20 +136,22 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   align-items: center;
 }
 
-.footer h3{
+.footer h3 {
   margin-right: 20px;
 }
 
+/* ===============================
+   SEZIONE MATCH / TABELLA
+   =============================== */
 
-/* Match section */
 .container {
   max-width: 1000px;
   margin: 100px auto 40px auto;
   background: #1a1a1a;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Combined box-shadow */
-  overflow-x: auto; /* Added horizontal scroll for the container if content overflows */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  overflow-x: auto;
 }
 
 .matchday-title {
@@ -210,14 +164,15 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   margin-bottom: 20px;
 }
 
+/* Tabella delle partite */
 .table-header,
 .match-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 4fr 1fr; /* Reverted to original for desktop */
+  grid-template-columns: 1fr 1fr 4fr 1fr;
   padding: 12px 16px;
   align-items: center;
-  gap: 10px; /* Keep gap for spacing */
-  min-width: 600px; /* Ensure a minimum width for the table content to prevent excessive stacking on slightly larger mobile screens */
+  gap: 10px;
+  min-width: 600px;
   color: white;
 }
 
@@ -226,23 +181,22 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   font-size: 12px;
   color: #aaa;
   border-bottom: 1px solid #333;
-  background-color: #1a1a1a; /* Added background for header */
-  border-top-left-radius: 8px; /* Rounded corners for header */
+  background-color: #1a1a1a;
+  border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 
-/* Specific alignment for header cells */
-.table-header > div:nth-child(1) { text-align: left; } /* Data */
-.table-header > div:nth-child(2) { text-align: center; } /* Ora */
-.table-header > div:nth-child(3) { text-align: center; } /* Match */
-.table-header > div:nth-child(4) { text-align: center; } /* Stato */
-
+/* Allineamento celle header */
+.table-header > div:nth-child(1) { text-align: left; }
+.table-header > div:nth-child(2) { text-align: center; }
+.table-header > div:nth-child(3) { text-align: center; }
+.table-header > div:nth-child(4) { text-align: center; }
 
 .match-row {
   background-color: #222;
   border-radius: 8px;
   margin: 8px 0;
-  transition: all 0.3s ease; /* Combined transition */
+  transition: all 0.3s ease;
 }
 
 .match-row:hover {
@@ -252,49 +206,49 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   cursor: pointer;
 }
 
-/* Specific alignment for row cells */
-.match-row > div:nth-child(1) { text-align: left; } /* Data */
-.match-row > div:nth-child(2) { text-align: center; } /* Ora */
-.match-row > div:nth-child(3) { text-align: center; } /* Match */
-.match-row > div:nth-child(4) { text-align: center; } /* Stato */
+/* Allineamento celle righe */
+.match-row > div:nth-child(1) { text-align: left; }
+.match-row > div:nth-child(2) { text-align: center; }
+.match-row > div:nth-child(3) { text-align: center; }
+.match-row > div:nth-child(4) { text-align: center; }
 
-
+/* Squadre e punteggio */
 .match-teams {
   display: flex;
-  justify-content: center; /* Center the match teams content */
+  justify-content: center;
   align-items: center;
-  gap: 15px; /* Increased gap */
-  flex-wrap: wrap; /* Allow items within match-teams to wrap if necessary */
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .team {
   display: flex;
   align-items: center;
-  gap: 6px; /* Adjusted gap */
+  gap: 6px;
 }
 
 .team-logo {
-  width: 28px; /* Adjusted logo size */
-  height: 28px; /* Adjusted logo size */
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
-  flex-shrink: 0; /* Prevent logo from shrinking */
+  flex-shrink: 0;
 }
 
 .team span {
   color: #ffffff;
   font-weight: 500;
-  white-space: nowrap; /* Prevent team names from wrapping on desktop */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .score {
   font-weight: bold;
   color: #ffffff;
-  font-size: 16px; /* Adjusted score font size */
-  flex-shrink: 0; /* Prevent score from shrinking */
+  font-size: 16px;
+  flex-shrink: 0;
 }
 
 .status {
@@ -309,89 +263,9 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   font-size: 14px;
 }
 
-/* Responsive adjustments for the table on small screens */
-@media (max-width: 600px) {
-   .table-header,
-  .match-row {
-      grid-template-columns: 1fr 1fr; /* Two columns layout */
-      grid-template-areas:
-          "data ora"
-          "match match"
-          "status status"; /* Define areas for mobile layout */
-      gap: 8px; /* Adjust gap for smaller screens */
-      padding: 10px;
-      min-width: auto; /* Remove minimum width on very small screens */
-  }
-
-  /* Reset specific alignment for header and row cells within this media query */
-  .table-header > div, .match-row > div {
-      text-align: left; /* Default to left alignment on small screens */
-      padding: 2px 0; /* Add slight vertical padding */
-  }
-
-  /* Assign grid areas to the correct child elements */
-  .table-header > div:nth-child(1), .match-row > div:nth-child(1) { grid-area: data; }
-  .table-header > div:nth-child(2), .match-row > div:nth-child(2) {
-      grid-area: ora;
-      text-align: right; /* Keep time aligned right */
-  }
-  .table-header > div:nth-child(3), .match-row > div:nth-child(3) { grid-area: match; }
-  .table-header > div:nth-child(4), .match-row > div:nth-child(4) { grid-area: status; }
-
-
-
-
-  .match-teams {
-      justify-content: flex-start; /* Align match teams content to the left */
-      gap: 8px; /* Adjust gap within match-teams */
-      flex-wrap: wrap; /* Allow team names and scores to wrap if needed */
-      width: 100%; /* Ensure match-teams takes available width */
-  }
-
-  .team {
-      flex-direction: row; /* Keep logo and name side-by-side */
-      align-items: center;
-       /* Allow team block to wrap if needed */
-       flex-basis: content; /* Allow flex items to size based on content */
-  }
-
-  .team span {
-       white-space: normal; /* Allow team names to wrap on mobile */
-       font-size: 14px; /* Reduce font size for team names */
-       overflow: visible; /* Ensure text is visible when wrapping */
-       text-overflow: clip; /* Remove ellipsis when wrapping */
-  }
-
-  .team-logo {
-      width: 20px; /* Further reduce logo size */
-      height: 20px;
-  }
-
-  .score {
-      font-size: 12px; /* Further reduce score font size */
-       white-space: nowrap; /* Keep score together */
-       margin: 0 4px; /* Adjust margin around the score */
-  }
-   .status,
-  .status-da-giocare {
-      font-size: 12px; /* Reduce status font size */
-      text-align: left; /* Ensure status is left-aligned */
-  }
-   /* Adjust padding for the container on small screens */
-  .container {
-      padding: 10px;
-      margin: 25px;
-
-  }
-}
-
-
-.container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
+/* ===============================
+   SEZIONE TEAM E PLAYER
+   =============================== */
 
 .team-section {
   margin-bottom: 50px;
@@ -482,7 +356,185 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
   color: #fff;
 }
 
-/* Responsive */
+/* ===============================
+   UTILITY CLASSES
+   =============================== */
+
+/* Margini e padding */
+.mt-0{margin-top: 0}
+.mt-1{margin-top: 10px}
+.mt-2{margin-top: 20px}
+.mt-3{margin-top: 40px}
+.mt-4{margin-top: 100px}
+
+.mb-0{margin-bottom: 0}
+.mb-1{margin-bottom: 10px}
+.mb-2{margin-bottom: 20px}
+.mb-3{margin-bottom: 40px}
+.mb-4{margin-bottom: 100px}
+
+.p-0{padding: 0}
+.p-1{padding: 10px}
+.p-2{padding: 20px}
+.p-3{padding: 40px}
+.p-4{padding: 100px}
+
+.pt-1{padding-top: 10px;}
+.pt-3{padding-top: 20px;}
+.pt-3{padding-top: 40px;}
+.pt-4{padding-top: 15vh;}
+
+.pb-1{padding-bottom: 10px;}
+.pb-2{padding-bottom: 20px;}
+.pb-3{padding-bottom: 40px;}
+.pb-4{padding-bottom: 15vh;}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.img-res { width: 100%; height: auto; margin-bottom: 20px; vertical-align: middle; }
+
+/* ===============================
+   MEDIA QUERY
+   =============================== */
+
+/* --- Menu responsive e hamburger --- */
+@media (max-width: 768px) {
+  .header__menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--menu-bg);
+    width: 100%;
+    height: 0vh;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+  }
+
+  .header__menu li {
+    width: 100%;
+    border-bottom: 1px solid #444;
+    display: block;
+  }
+
+  .menu-open .header__menu {
+    height: calc(100vh - 60px);
+    padding: 3%;
+    overflow-y: auto;
+  }
+
+  .icon-hamburger {
+    height: 50px;
+    width: 40px;
+    margin-left: 20px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-hamburger span {
+    height: 2px;
+    width: 30px;
+    background: var(--menu-color);
+    position: relative;
+    display: block;
+    margin-top: 11px;
+    transition: all 0.2s cubic-bezier(.215, .61, .355, 1);
+  }
+
+  .menu-open .icon-hamburger span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+  }
+
+  .menu-open .icon-hamburger span:nth-child(2) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+
+  .icon-hamburger span:nth-child(3) {
+    display: none;
+  }
+
+  .header__quick {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+
+  .header__menu li a {
+    padding: 12px;
+  }
+}
+
+/* --- Tabella match responsive --- */
+@media (max-width: 600px) {
+  .table-header,
+  .match-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "data ora"
+      "match match"
+      "status status";
+    gap: 8px;
+    padding: 10px;
+    min-width: auto;
+  }
+
+  .table-header > div, .match-row > div {
+    text-align: left;
+    padding: 2px 0;
+  }
+
+  .table-header > div:nth-child(1), .match-row > div:nth-child(1) { grid-area: data; }
+  .table-header > div:nth-child(2), .match-row > div:nth-child(2) { grid-area: ora; text-align: right; }
+  .table-header > div:nth-child(3), .match-row > div:nth-child(3) { grid-area: match; }
+  .table-header > div:nth-child(4), .match-row > div:nth-child(4) { grid-area: status; }
+
+  .match-teams {
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .team {
+    flex-direction: row;
+    align-items: center;
+    flex-basis: content;
+  }
+
+  .team span {
+    white-space: normal;
+    font-size: 14px;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .team-logo {
+    width: 20px;
+    height: 20px;
+  }
+
+  .score {
+    font-size: 12px;
+    white-space: nowrap;
+    margin: 0 4px;
+  }
+
+  .status,
+  .status-da-giocare {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .container {
+    padding: 10px;
+    margin: 25px;
+  }
+}
+
+/* --- Player card responsive --- */
 @media (max-width: 700px) {
   .player-card {
     flex-direction: column;
@@ -510,44 +562,7 @@ h4, p, .text-4 { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
     height: 80px;
   }
 
-  .container{
+  .container {
     margin: 20px;
   }
 }
-
-
-
-
-/* ! Helpers  */
-.mt-0{margin-top: 0 }
-.mt-1{margin-top: 10px}
-.mt-2{margin-top: 20px}
-.mt-3{margin-top: 40px}
-.mt-4{margin-top: 100px }
-
-.mb-0{margin-bottom: 0}
-.mb-1{margin-bottom: 10px}
-.mb-2{margin-bottom: 20px}
-.mb-3{margin-bottom: 40px}
-.mb-4{margin-bottom: 100px}
-
-.p-0{padding: 0}
-.p-1{padding: 10px}
-.p-2{padding: 20px}
-.p-3{padding: 40px}
-.p-4{padding: 100px}
-
-.pt-1{padding-top: 10px;}
-.pt-3{padding-top: 20px;}
-.pt-3{padding-top: 40px;}
-.pt-4{padding-top: 15vh;}
-
-.pb-1{padding-bottom: 10px;}
-.pb-2{padding-bottom: 20px;}
-.pb-3{padding-bottom: 40px;}
-.pb-4{padding-bottom: 15vh;}
-
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-left { text-align: left; }
-.img-res { width: 100%; height: auto; margin-bottom: 20px;vertical-align: middle;}
